@@ -16,6 +16,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build the hello-docker Docker image
         run: |
-          docker build . --tag ghcr.io/CabbetInc/ghcr-demo:latest
-          docker run ghcr.io/CabbetInc/ghcr-demo:latest
-          docker push ghcr.io/CabbetInc/ghcr-demo:latest
+          docker build . --tag ghcr.io/cabbetinc/ghcr-demo:latest
+          docker run ghcr.io/cabbetinc/ghcr-demo:latest
+          docker push ghcr.io/cabbetinc/ghcr-demo:latest
