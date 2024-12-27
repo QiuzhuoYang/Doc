@@ -14,10 +14,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout Source
+        uses: actions/checkout@v4
       - name: Build the hello-docker Docker image
         run: |
-          ls ../
-          pwd
+          ls -l
 #          docker build . --tag ghcr.io/cabbetinc/ghcr-demo:latest
 #          docker run ghcr.io/cabbetinc/ghcr-demo:latest
 #          docker push ghcr.io/cabbetinc/ghcr-demo:latest
