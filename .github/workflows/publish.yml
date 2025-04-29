@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Build the hello-docker Docker image
         run: |
-          docker login -u cn-east-3@HPUADXDDX4DO3S6MGF8P -p 52b0e833a98f7f824ba7cccb9fd709b61640c4d21693a59e37b2d1507312582f swr.cn-east-3.myhuaweicloud.com
+          docker login -u "$SWR_UNAME" -p "$SWR_PASSWORD" swr.cn-east-3.myhuaweicloud.com
           docker build . --tag swr.cn-east-3.myhuaweicloud.com/esdk-yqz/huaweicloud-demo:latest
           docker run swr.cn-east-3.myhuaweicloud.com/esdk-yqz/huaweicloud-demo:latest
           docker push swr.cn-east-3.myhuaweicloud.com/esdk-yqz/huaweicloud-demo:latest
