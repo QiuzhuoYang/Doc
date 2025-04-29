@@ -20,6 +20,9 @@ jobs:
       - name: Checkout Source
         uses: actions/checkout@v4
       - name: Build the hello-docker Docker image
+        env:
+          SWR_UNAME: ${{ env.SWR_UNAME }}
+          SWR_PASSWORD: ${{ env.SWR_PASSWORD }}
         run: |
           docker login -u "$SWR_UNAME" -p "$SWR_PASSWORD" swr.cn-east-3.myhuaweicloud.com
           docker build . --tag swr.cn-east-3.myhuaweicloud.com/esdk-yqz/huaweicloud-demo:latest
